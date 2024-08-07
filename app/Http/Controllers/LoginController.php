@@ -30,7 +30,7 @@ class LoginController extends Controller
         $user = Auth::user();
         $username = $user->name;
 
-        return to_route('series.index')->with('success', "Bem-vindo de volta, $username!")->with('user', Auth::user());
+        return to_route('series.home')->with('success', "Bem-vindo, $username!")->with('user', Auth::user());
     }
 
     public function destroy(){
