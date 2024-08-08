@@ -69,6 +69,10 @@ a {
     color: #141414;
 }
 
+.entrar p {
+    font-weight: bold;
+}
+
 input::placeholder {
     color: #b6b6b6;
 }
