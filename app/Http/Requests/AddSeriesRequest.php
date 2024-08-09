@@ -33,7 +33,8 @@ class AddSeriesRequest extends FormRequest
             'name.required' => 'O nome da série é obrigatório.',
             'seasons.required' => 'O número de temporadas é obrigatório.',
             'seasons.integer' => 'O número de temporadas deve ser um número inteiro.',
-            'seasons.min' => 'O número de temporadas deve ser pelo menos 1.',
+            'seasons.min' => 'O número de temporadas pode ser de no mínimo 1 número.',
+            'seasons.max' => 'O número de temporadas pode ser de no máximo 3 números.',
         ];
     }
 }

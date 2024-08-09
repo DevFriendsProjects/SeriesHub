@@ -3,7 +3,24 @@
     <h1 class="titulo">BEM VINDO AO SEU SITE DAS SÉRIES</h1>
     
     <div id="login">
-        <div class="caixa">         
+
+        <div class="caixa">    
+            
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <h1 style="color: pink;">LOGIN</h1>
 
             <form action="{{ route('signin')}}" method="post">
