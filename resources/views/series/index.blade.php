@@ -24,7 +24,7 @@
                         <td>{{ $serie->seasons }}</td>
                         <td>
                             <span>
-                                <a href="#" class="btn btn-success btn-sm"><i class="fa-solid fa-eye"></i></a>
+                                <a href="{{ route('series.show', $serie->id) }}" class="btn btn-success btn-sm"><i class="fa-solid fa-eye"></i></a>
                                 <a href="{{ route('series.edit', $serie->id) }}" class="btn btn-primary btn-sm ms-1"><i class="fa-solid fa-pencil"></i></a>
                                 <form action="{{ route('series.destroy', $serie->id) }}" method="post" onsubmit="return confirm('Você tem certeza que deseja deletar esta série?');">
                                     @csrf
