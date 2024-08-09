@@ -29,7 +29,7 @@
                                 <form action="{{ route('series.destroy', $serie->id) }}" method="post" onsubmit="return confirm('Você tem certeza que deseja deletar esta série?');">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger btn-sm ms-m1"><i class="fa-solid fa-trash"></i></button>
+                                    <button class="btn btn-danger btn-sm ms-1"><i class="fa-solid fa-trash"></i></button>
                                 </form>
                             </span>
                         </td>
