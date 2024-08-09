@@ -1,7 +1,7 @@
 <x-layout title="SeriesHub - Lista de séries">
 
     <div class="container mt-2 text-center">
-        <h1>Lista das séries cadastradas</h1><br>
+        <h1>Lista de Séries</h1><br>
 
         @if(session('success'))
             <div class="alert alert-success">
