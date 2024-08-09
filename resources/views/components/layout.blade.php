@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="home.html">
         <img class="logo-img" 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/68/Logo_TNT_Series.png"></a>
+src="https://cdn-icons-png.flaticon.com/512/686/686472.png"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
       </button>
