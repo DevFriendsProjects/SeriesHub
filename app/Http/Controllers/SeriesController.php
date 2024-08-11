@@ -24,8 +24,10 @@ class SeriesController extends Controller
 
     public function show($id){
         $serie = Series::with('seasons')->findOrFail($id);
+        $user = Auth::user();
+        $watchedSeasons = $user->watchedSeasons()->pluck('season_id')->toArray();
 
-        return view('series.show', compact('serie'));
+        return view('series.show', compact('serie', 'watchedSeasons'));
     }
 
     public function create(){
@@ -63,5 +65,14 @@ class SeriesController extends Controller
         $series->update($request->validated());
 
         return to_route('series.index')->with('mensagem.sucesso', "Série '{$series->nome}' foi atualizada com sucesso.");
+    }
+
+    public function seasonsWatched(Request $request, $serieId)
+    {
+        $user = Auth::user();
+        $seasons = $request->input('seasons', []);
+        $user->watchedSeasons()->sync($seasons);
+
+        return redirect()->route('series.show', $serieId)->with('success', 'Temporadas assistidas atualizadas!');
     }
 }

@@ -7,8 +7,16 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index(){
-        return view('login.index');
+    public function index(){ 
+        if (Auth::check()){
+            $user = Auth::user();
+            Auth::login($user);
+            $username = $user->name;
+
+            return to_route('series.home')->with('success', "Bem-vindo, $username!")->with('user', $user);
+        } else {
+            return view('login.index');
+        }
     }
 
     public function store(Request $request){
@@ -30,7 +38,7 @@ class LoginController extends Controller
         $user = Auth::user();
         $username = $user->name;
 
-        return to_route('series.home')->with('success', "Bem-vindo, $username!")->with('user', Auth::user());
+        return to_route('series.home')->with('success', "Bem-vindo, $username!")->with('user', $user);
     }
 
     public function destroy(){

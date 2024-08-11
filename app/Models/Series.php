@@ -16,4 +16,11 @@ class Series extends Model
         return $this->hasMany(Season::class);
     }
 
+    protected static function booted()
+    {
+        static::deleting(function ($series) {
+            // Remove todas as temporadas relacionadas a série
+            $series->seasons->each->delete();
+        });
+    }
 }

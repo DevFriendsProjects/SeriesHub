@@ -18,4 +18,12 @@ class Season extends Model
     {
         return $this->belongsTo(Series::class);
     }
+
+    protected static function booted()
+    {
+        static::deleting(function ($season) {
+            // Remove as relações na tabela user_season
+            $season->users()->detach();
+        });
+    }
 }

@@ -12,6 +12,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/series', SeriesController::class)->except('show');
     Route::get('/series/home', [SeriesController::class, 'home'])->name('series.home');
     Route::get('/series/show/{series}', [SeriesController::class, 'show'])->name('series.show');
+    Route::post('/series/{id}/seasonsWatched', [SeriesController::class, 'seasonsWatched'])->name('seasonsWatched');
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');

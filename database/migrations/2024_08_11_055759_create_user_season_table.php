@@ -16,12 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('season_id');
             $table->timestamps();
-
-            // Foreign key constraints
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('season_id')->references('id')->on('seasons')->onDelete('cascade');
-
-            // Unique constraint to prevent duplicate entries
             $table->unique(['user_id', 'season_id']);
         });
     }
