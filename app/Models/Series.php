@@ -9,5 +9,11 @@ class Series extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'seasons'];
+    protected $fillable = ['name'];
+
+    public function seasons()
+    {
+        return $this->hasMany(Season::class);
+    }
+
 }

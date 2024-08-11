@@ -1,9 +1,12 @@
-<x-layout title="SeriesHub - Visualizar série ''{!! $series->name !!}''">
+<x-layout title="SeriesHub - Visualizar série ''{!! $serie->name !!}''">
 
     <div class="jumbotron text-center bg-dark">
-        <h1 class="display-4">{{ $series->name }}</h1>
+        <h1 class="display-4">{{ $serie->name }}</h1>
         <hr>
-        <p class="lead">Temporadas: {{ $series->seasons }}</p>
+        <ul>
+            @foreach($serie->seasons as $season)
+                <li>Temporada: {{ $season->season_number }}</li>
+            @endforeach
+        </ul>
     </div>
-
 </x-layout>

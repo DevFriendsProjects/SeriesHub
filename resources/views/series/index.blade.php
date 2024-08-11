@@ -21,7 +21,7 @@
                 @foreach ($series as $serie)
                     <tr>
                         <td>{{ $serie->name }}</td>
-                        <td>{{ $serie->seasons }}</td>
+                        <td>{{ $serie->seasons_count }}</td>
                         <td>
                             <span>
                                 <a href="{{ route('series.show', $serie->id) }}" class="btn btn-success btn-sm"><i class="fa-solid fa-eye"></i></a>
