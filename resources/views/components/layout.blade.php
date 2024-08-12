@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="{{ route('series.home')}}">
         <img class="logo-img" 
-src="https://cdn.colab55.com/images/55001/studio/75262/art/173249/stickers.png"></a>
+src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAyL3YxMTgtcGxhLTEwLWljb24yLWpvYjE3MzUtcC5wbmc.png"> SeriesHub</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
       </button>
