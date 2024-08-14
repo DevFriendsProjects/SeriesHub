@@ -73,3 +73,10 @@ toggle.addEventListener ('click', ()=>{
         menu.classList.remove('show');
         }
 })
+
+
+//LISTA//
+
+
+
+//FIM DA LISTA//

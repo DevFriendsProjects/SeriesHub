@@ -15,7 +15,7 @@
         <h1 class="titulo-cadastro" class="text-center mt-4" style="color: pink; margin-right: 100px;">Adicione sua Série</h1>
         <input type="text" id="seriesInput" name="name" placeholder="Adicione o nome da série" required>
         <input type="number" id="episodesInput" name="seasons" placeholder="Adicione o número de temporadas" min="1" required>
-        <button type="submit" class="btn btn-success">Adicionar</button> 
+        <button type="submit" class="btn btn-success">Adicionar</button>
         <ul id="seriesList"></ul>
     </form>
 

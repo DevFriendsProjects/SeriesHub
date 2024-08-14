@@ -1,5 +1,7 @@
 <x-layout title="SeriesHub - Lista de séries">
 
+<?php 
+    /*
     <div class="container mt-2 text-center">
         <h1>Lista de Séries</h1><br>
 
@@ -41,5 +43,101 @@
             {{ $series->links() }}
         </div>
     </div>
+    */ 
+?>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="{{ asset('css/series.css') }}">
+
+    <div class="container mt-2">
+        <h1 class="text-center mb-4">Séries Adicionadas</h1>
+        <table id="example" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Série</th>
+                    <th>Temporadas</th>
+                    <th>Temporadas Vistas</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                    <td>Game Of Thrones</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td>Breaking Bad</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>Prison Break</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td>Anime de jogar bola</td>
+                    <td>100</td>
+                    <td>0</td>
+                </tr>
+
+                <tr>
+                    <td>Azagal</td>
+                    <td>15</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>Dark</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>Lost</td>
+                    <td>8</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>Dragon Ball Z</td>
+                    <td>50</td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <td>Naruto</td>
+                    <td>51</td>
+                    <td>2</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+    $('#example').DataTable({
+        "pagingType": "full_numbers",
+        "pageLength": 5,
+        "lengthMenu": [5, 10, 25, 50],
+        "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
+                }
+    });
+});
+ </script>
+
 
 </x-layout>
