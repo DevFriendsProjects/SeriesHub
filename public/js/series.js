@@ -77,6 +77,71 @@ toggle.addEventListener ('click', ()=>{
 
 //LISTA//
 
+document.addEventListener("DOMContentLoaded", function() {
+    const rowsPerPage = 5; // Quantas linhas por página
+    const seriesTableBody = document.getElementById('seriesTableBody');
+    const pagination = document.getElementById('pagination');
 
+    const data = [
+        { nome: 'Game of Thrones', temporadas: 8, vistas: 5 },
+        { nome: 'Breaking Bad', temporadas: 5, vistas: 5 },
+        // Adicione mais séries aqui...
+    ];
+
+    function renderTable(page) {
+        // Limpa as linhas da tabela
+        seriesTableBody.innerHTML = '';
+        
+        // Cálculo dos índices de início e fim para a página atual
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const paginatedItems = data.slice(start, end);
+
+        // Renderiza as linhas da tabela
+        paginatedItems.forEach(item => {
+            const row = `<tr>
+                <td>${item.nome}</td>
+                <td>${item.temporadas}</td>
+                <td>${item.vistas}</td>
+                <td>
+                    <button class="edit-btn">Editar</button>
+                    <button class="delete-btn">Deletar</button>
+                </td>
+            </tr>`;
+            seriesTableBody.innerHTML += row;
+        });
+    }
+
+    function renderPagination(totalItems) {
+        const totalPages = Math.ceil(totalItems / rowsPerPage);
+
+        pagination.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement('button');
+            button.innerText = i;
+            button.addEventListener('click', function() {
+                renderTable(i);
+                updatePagination(i);
+            });
+
+            pagination.appendChild(button);
+        }
+    }
+
+    function updatePagination(currentPage) {
+        const buttons = pagination.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.classList.remove('active');
+            if (parseInt(button.innerText) === currentPage) {
+                button.classList.add('active');
+            }
+        });
+    }
+
+    // Inicializa a tabela e a paginação
+    renderTable(1);
+    renderPagination(data.length);
+});
 
 //FIM DA LISTA//

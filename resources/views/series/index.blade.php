@@ -46,6 +46,9 @@
     */ 
 ?>
 
+
+<?php 
+    /*
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('css/series.css') }}">
@@ -138,6 +141,86 @@
     });
 });
  </script>
+*/ 
+?>
+<div class="container m3">
+    <h1 class="tableTitle">Lista de séries</h1>
+    <div class="table-container">
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome da Série</th>
+                        <th>Temporadas</th>
+                        <th>Temporadas Vistas</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Game of Thrones</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Deletar</button>
+                        </td>
+                    </tr>
 
+                    <tr>
+                        <td>Game of Thrones</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Deletar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Game of Thrones</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Deletar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Game of Thrones</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Deletar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Game of Thrones</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Deletar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Game of Thrones</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>
+                            <button class="edit-btn">Editar</button>
+                            <button class="delete-btn">Deletar</button>
+                        </td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+        
+</div>
 
 </x-layout>

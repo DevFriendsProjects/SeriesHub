@@ -259,7 +259,7 @@ main {
 
 /*FIM DO HOME*/
 
-/*INICO DA LISTA*/
+/*INICO DA LISTA2*
 
 .dataTables_wrapper .dataTables_paginate {
     float: right;
@@ -303,4 +303,68 @@ table.dataTable tbody tr:hover {
     color: #fff !important;
 }
 
-/*FINAL DA LISTA*/
+FINAL DA LISTA2*/
+
+/*INICIO DA LISTA 3*/
+
+.tableTitle {
+    color: pink;
+    text-align: center;
+    font-weight: bold;
+    animation: imgAnim 2s ease-in-out forwards;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    height: 70vh;
+    animation: imgAnim 2s ease-in-out forwards;
+}
+
+tr {
+    font-size: 20px;
+    height: 40px;
+    background-color: rgb(123, 32, 141);
+    color: white;
+}
+
+td {
+    width: 250px;
+    background: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    opacity: 0.8;
+}
+
+
+.pagination-container {
+    margin-top: -100px; /* Ajuste o valor para "grudar" a paginação na tabela */
+}
+.pagination .page-item {
+    margin-bottom: 10px; /* Remove o espaço extra abaixo dos itens de paginação */
+}
+
+/*FINAL DA LISTA 3*/
+

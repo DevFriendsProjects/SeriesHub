@@ -1,6 +1,6 @@
 <x-login-layout title="SeriesHub - Login">
 
-    <h1 class="titulo">BEM VINDO AO SEU SITE DAS SÉRIES</h1>
+    <h1 class="titulo">Bem vindo ao SeriesHub</h1>
     
     <div id="login">
 
@@ -21,7 +21,7 @@
                 </div>
             @endif
 
-            <h1 style="color: pink;">LOGIN</h1>
+            <h1 style="color: pink;">Login</h1>
 
             <form action="{{ route('signin')}}" method="post">
                 @csrf
