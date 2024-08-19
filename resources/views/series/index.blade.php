@@ -1,15 +1,7 @@
 <x-layout title="SeriesHub - Lista de séries">
 
-<?php 
-    /*
-    <div class="container mt-2 text-center">
+{{--     <div class="container mt-2 text-center">
         <h1>Lista de Séries</h1><br>
-
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
 
         <table class="table table-striped table-dark">
             <thead class="align-left thead-dark">
@@ -42,14 +34,10 @@
         <div class="text-center">
             {{ $series->links() }}
         </div>
-    </div>
-    */ 
-?>
+    </div> --}}
 
 
-<?php 
-    /*
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+{{--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('css/series.css') }}">
 
@@ -141,12 +129,17 @@
     });
 });
  </script>
-*/ 
-?>
+  --}}
 <div class="container m3">
     <h1 class="tableTitle">Lista de séries</h1>
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="table-container">
-        <div class="table">
             <table>
                 <thead>
                     <tr>
@@ -157,70 +150,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Game of Thrones</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>
-                            <button class="edit-btn">Editar</button>
-                            <button class="delete-btn">Deletar</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Game of Thrones</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>
-                            <button class="edit-btn">Editar</button>
-                            <button class="delete-btn">Deletar</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Game of Thrones</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>
-                            <button class="edit-btn">Editar</button>
-                            <button class="delete-btn">Deletar</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Game of Thrones</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>
-                            <button class="edit-btn">Editar</button>
-                            <button class="delete-btn">Deletar</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Game of Thrones</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>
-                            <button class="edit-btn">Editar</button>
-                            <button class="delete-btn">Deletar</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Game of Thrones</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>
-                            <button class="edit-btn">Editar</button>
-                            <button class="delete-btn">Deletar</button>
-                        </td>
-                    </tr>
-        
+                    @foreach ($series as $serie)
+                        <tr>
+                            <td>{{ $serie->name }}</td>
+                            <td>{{ $serie->seasons_count }}</td>
+                            <td>?</td>
+                            <td>
+                                <a href="{{ route('series.show', $serie->id) }}" class="btn btn-success btn-sm"><i class="fa-solid fa-eye"></i></a>
+                                <a href="{{ route('series.edit', $serie->id) }}" class="btn btn-primary btn-sm ms-1"><i class="fa-solid fa-pencil"></i></a>
+                                <form action="{{ route('series.destroy', $serie->id) }}" method="post" onsubmit="return confirm('Você tem certeza que deseja deletar esta série?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm ms-1"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
+            <div class="text-center" style="display: flex; justify-content: center;">
+                {{ $series->links() }}
+            </div>   
         </div>
-        
-</div>
-
+    </div>
 </x-layout>
