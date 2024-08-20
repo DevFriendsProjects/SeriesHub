@@ -66,6 +66,13 @@ body, html {
     }
 }
 
+.titulo-cadastro {
+    color: pink; 
+    margin-right: 100px; 
+    font-weight: bold;
+    animation: imgAnim 2s ease-in-out forwards;
+}
+
 
 .box {
     align-items: center;
@@ -465,6 +472,10 @@ td {
         display: flex;
         justify-content: center;
         flex-direction: column;
+    }
+
+    .navbar-nav-center {
+        margin-left: -1%;
     }
 
     .box {
