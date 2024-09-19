@@ -51,10 +51,8 @@ src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0Z
     </nav>
   </header>
 
-
 <main>
-    <div class="addseries col-md-10 ml-sm-auto col-lg-11 px-4">
-
+  
       {{ $slot }}
 
     </div>

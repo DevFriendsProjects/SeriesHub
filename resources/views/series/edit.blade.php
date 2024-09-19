@@ -1,26 +1,34 @@
-<x-layout title="SeriesHub - Atualizar Série">
+<x-layout title="Atualizar Série">
 
-        @if($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-    <div class="container mt-2 text-center">
-        <h1>Editar Série</h1><br>
-        <form action="{{ route('series.update', $series->id) }}" method="post" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
-            <h1 class="titulo-cadastro" class="text-center mt-4" style="color: pink; margin-right: 100px;"></h1>
-            <input type="text" id="seriesInput" name="name" placeholder="Nome da série" value="{{ old('name', $series->name) }}">
-            <input type="number" id="episodesInput" name="seasons" placeholder="Número de temporadas" min="1" value="{{ old('seasons', $series->seasons) }}">
-            <button type="submit" class="btn btn-primary">Atualizar</button> 
-            <ul id="seriesList"></ul>
-        </form>
+    <div class="addseries col-md-10 ml-sm-auto col-lg-11 px-4">
+        <div class="container mt-2 text-center">
+            <h1>Editar Série</h1>
+
+            <form action="{{ route('series.update', $series->id) }}" method="post">
+                @csrf
+                @method('PUT')
+                <div class="form-group">
+                    <label for="seriesInput">Nome da Série:</label>
+                    <input type="text" id="seriesInput" name="name" class="form-control" value="{{ old('name', $series->name) }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="seasonsInput">Número de Temporadas:</label>
+                    <input type="number" id="seasonsInput" name="seasons" class="form-control" min="1" max="100" value="{{ old('seasons', $series->seasons()->count()) }}" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Atualizar</button>
+            </form>
+        </div>
     </div>
 
 </x-layout>

@@ -22,11 +22,14 @@ class SeriesController extends Controller
         return view('series.index', compact('series'));
     }
 
-    public function show($id){
-        $serie = Series::with('seasons')->findOrFail($id);
+    public function show($id)
+    {
+        $serie = Series::with(['seasons' => function ($query) {
+            $query->orderBy('season_number', 'asc');
+        }])->findOrFail($id);
         $user = Auth::user();
         $watchedSeasons = $user->watchedSeasons()->pluck('season_id')->toArray();
-
+    
         return view('series.show', compact('serie', 'watchedSeasons'));
     }
 
@@ -61,10 +64,18 @@ class SeriesController extends Controller
         return view ('series.edit', compact('series'));
     }
 
-    public function update(Series $series, AddSeriesRequest $request){
+    public function update(Series $series, AddSeriesRequest $request)
+    {
         $series->update($request->validated());
+        $series->seasons()->delete();
 
-        return to_route('series.index')->with('mensagem.sucesso', "Série '{$series->nome}' foi atualizada com sucesso.");
+        for ($i = 1; $i <= $request->input('seasons'); $i++) {
+            $series->seasons()->create([
+                'season_number' => $i
+            ]);
+        }
+
+        return redirect()->route('series.index')->with('success', "Série '{$series->name}' foi atualizada com sucesso!");
     }
 
     public function seasonsWatched(Request $request, $serieId)
