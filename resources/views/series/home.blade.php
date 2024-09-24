@@ -1,23 +1,15 @@
 <x-layout title="Series - Home">
 
     <div class="addseries col-md-10 ml-sm-auto col-lg-11 px-4">
-        <div class="box">
-            <h1>Series Hub</h1>
-        </div>
-
-        <div class="box-img">
-            <img class="img-home" src="https://cdn.colab55.com/images/55001/studio/75262/art/173249/stickers.png" alt="img"/>
-        </div>
-
+        <h1 class="tableTitle">SeriesHub</h1>
         <div class="card-info">
             <div class="series-cad">
-                <h3>Séries cadastradas</h3>
-                <p>4</p>
+                <h3>Séries cadastradas:</h3>
+                <p class="h5">{{ $seriesCount }}</p>
             </div>
-
             <div class="usuario-cad">
-                <h3>Usuários cadastrados</h3>
-                <p>1</p>
+                <h3>Usuários cadastrados:</h3>
+                <p class="h5">{{ $usersCount }}</p>
             </div>
         </div>
     </div>
